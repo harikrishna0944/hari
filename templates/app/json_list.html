@@ -1,0 +1,15 @@
+
+{% extends 'app/dummy.html'%}
+
+{% block  title %}
+<title>home page</title>
+{% endblock %}
+{% block  body_block %}
+
+<h1>json data is</h1>
+{% for sc in data %}
+    <a href="{{sc.pk}}"><h4>{{sc}}</h4></a>
+{% endfor %}
+
+{% endblock %}
+

@@ -1,0 +1,35 @@
+
+{% extends 'app/dummy.html'%}
+
+{% block  title %}
+<title>home page</title>
+{% endblock %}
+{% block  body_block %}
+
+<h1>end_year: {{data.end_year}}</h1>
+<h1> intensity:{{data.intensity}}</h1>
+<h1> sector:{{data.sector}}</h1>
+<h1> topic:{{data.topic}}</h1>
+<h1> insight:{{data.insight}}</h1>
+<h1> url:{{data.url}}</h1>
+<h1> region:{{data.region}}</h1>
+<h1> start_year:{{data.start_year}}</h1>
+<h1> impact:{{data.impact}}</h1>
+<h1> added:{{data.added}}</h1>
+<h1> published:{{data.published}}</h1>
+<h1> country:{{data.country}}</h1>
+<h1> relevance:{{data.relevance}}</h1>
+<h1> pestle:{{data.pestle}}</h1>
+<h1> source:{{data.source}}</h1>
+<h1> title:{{data.title}}</h1>
+<h1> likelihood:{{data.likelihood}}</h1>
+
+
+
+
+<a href="{% url 'update' pk=data.pk %}" class="btn btn-outline-warning " >update</a>
+<a href="{% url 'delate' pk=data.pk %}" class="btn btn-outline-danger " >delate</a>
+
+
+{% endblock %}
+

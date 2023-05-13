@@ -1,0 +1,37 @@
+from django.shortcuts import render
+
+# Create your views here.
+from app.models import *
+from django.views.generic import ListView,TemplateView,CreateView,DetailView,UpdateView,DeleteView
+from django.urls import reverse_lazy
+    
+class home(TemplateView):
+    template_name='app/home.html'
+
+
+class json_listview(ListView):
+    model=json
+    context_object_name='data'
+
+class jsoncreate(CreateView):
+    model=json
+    fields="__all__"
+
+class deatillist(DetailView):
+    model=json
+    context_object_name="data"
+
+class jsonupdate(UpdateView):
+    model=json
+    fields="__all__"
+
+class jsondelate(DeleteView):
+    model=json
+    context_object_name="data"
+    success_url=reverse_lazy('json_listview')
+
+
+
+
+    
+

@@ -1,0 +1,29 @@
+
+{% extends 'app/dummy.html'%}
+
+{% block  title %}
+<title>home page</title>
+{% endblock %}
+{% block  body_block %}
+
+<h1>School name is {{sc.name}}</h1>
+<h1>School location is {{sc.location}}</h1>
+<h1>School principal is {{sc.principal}}</h1>
+
+
+<a href="{% url 'update' pk=sc.pk %}" class="btn btn-outline-warning " >update</a>
+<a href="{% url 'delate' pk=sc.pk %}" class="btn btn-outline-danger " >delate</a>
+
+<hr>
+<h1>student deatils </h1>
+{% for i in sc.schools.all  %}
+    <h4>student name {{i.name}}</h4>
+    <h4>student age {{i.age}}</h4>
+    <!-- <a href="{% url 'update' pk=sc.pk %}" class="btn btn-outline-warning " >update</a> -->
+    <!-- <a href="{% url 'delate' pk=sc.pk %}" class="btn btn-outline-danger " >delate</a> -->
+    <hr>
+{% endfor %}
+
+
+{% endblock %}
+
