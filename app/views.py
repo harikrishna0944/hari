@@ -4,9 +4,21 @@ from django.shortcuts import render
 from app.models import *
 from django.views.generic import ListView,TemplateView,CreateView,DetailView,UpdateView,DeleteView
 from django.urls import reverse_lazy
+import pandas as pd
     
-class home(TemplateView):
-    template_name='app/home.html'
+# class home(TemplateView):
+#     template_name='app/home.html'
+
+def home(request):
+    # item=json.objects.all().values()
+    # df=pd.DataFrame(item)
+    # df1=df.title.tolist()
+    # df=df["likelihood"].tolist()
+    # mydic={
+    #     'df':df,'df1':df1
+    # }
+
+    return render(request,'app/home.html')
 
 
 class json_listview(ListView):

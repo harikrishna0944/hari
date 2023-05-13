@@ -19,7 +19,7 @@ from app.views import *
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("home/",home.as_view(),name="home"),
+    path("home/",home,name="home"),
     path('jsoncreate/',jsoncreate.as_view(),name="jsoncreate"),
     path('json_listview/',json_listview.as_view(),name="json_listview"),
     re_path("^update/(?P<pk>\d+)",jsonupdate.as_view(),name="update"),
